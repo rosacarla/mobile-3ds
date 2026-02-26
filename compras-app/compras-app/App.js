@@ -5,12 +5,12 @@ const cesta = {
   nome: "Cesta de Verduras",
   fazenda: "Fazenda Boa Terra",
   preco: "R$ 40,00",
-  imagemFazenda: "https://picsum.photos/400/200?farm", // imagem ilustrativa
+  imagemFazenda: "https://images.creativefabrica.com/products/previews/2023/09/21/zflmFfpQ1/2arIMKaNH3p63xC93CBzRYqmF9Z-desktop.jpg", // imagem ilustrativa
   itens: [
-    { id: "1", nome: "Alface", imagem: "https://picsum.photos/100/100?lettuce"},
-    { id: "2", nome: "Tomate", imagem: "https://picsum.photos/100/100?tomato" },
-    { id: "3", nome: "Cenoura", imagem: "https://picsum.photos/100/100?carrot" },
-    { id: "4", nome: "Batata", imagem: "https://picsum.photos/100/100?potato" },
+    { id: "1", nome: "Alface", imagem: "https://img.cdndsgni.com/preview/13206058.jpg"},
+    { id: "2", nome: "Tomate", imagem: "https://img.cdndsgni.com/preview/10002716.jpg" },
+    { id: "3", nome: "Cenoura", imagem: "https://img.cdndsgni.com/preview/12485137.jpg" },
+    { id: "4", nome: "Batata", imagem: "https://img.cdndsgni.com/preview/10600699.jpg" },
   ],
 };
 
