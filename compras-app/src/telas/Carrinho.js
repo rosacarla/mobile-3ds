@@ -1,23 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, FlatList, Image, Button } from 'react-native';
 
 export default function Carrinho({ itens, voltarCatalogo, fecharPedido, irParaHistorico }) {
-  const total = itens.reduce((soma, item) => soma + (item.preco || 0), 0);
+  const [carrinho, setCarrinho] = useState(itens);
+
+  const aumentarQuantidade = (id) => {
+    setCarrinho(carrinho.map(item =>
+      item.id === id ? { ...item, quantidade: (item.quantidade || 1) + 1 } : item
+    ));
+  };
+
+  const diminuirQuantidade = (id) => {
+    setCarrinho(carrinho.map(item =>
+      item.id === id && (item.quantidade || 1) > 1
+        ? { ...item, quantidade: item.quantidade - 1 }
+        : item
+    ));
+  };
+
+  const excluirItem = (id) => {
+    setCarrinho(carrinho.filter(item => item.id !== id));
+  };
+
+  const total = carrinho.reduce(
+    (soma, item) => soma + (item.preco || 0) * (item.quantidade || 1),
+    0
+  );
 
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>Carrinho de Compras</Text>
 
-      {itens.length === 0 ? (
+      {carrinho.length === 0 ? (
         <Text>Seu carrinho está vazio.</Text>
       ) : (
         <FlatList
-          data={itens}
-          keyExtractor={(item) => item.id}
+          data={carrinho}
+          keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <View style={styles.itemContainer}>
               <Image source={{ uri: item.imagem }} style={styles.itemImagem} />
-              <Text style={styles.item}>{item.nome} - R$ {item.preco.toFixed(2)}</Text> 
+              <Text style={styles.item}>
+                {item.nome} - R$ {item.preco.toFixed(2)} x {item.quantidade || 1}
+              </Text>
+              <Button title="+" onPress={() => aumentarQuantidade(item.id)} />
+              <Button title="-" onPress={() => diminuirQuantidade(item.id)} />
+              <Button title="Excluir" onPress={() => excluirItem(item.id)} />
             </View>
           )}
         />
@@ -38,5 +66,5 @@ const styles = StyleSheet.create({
   total: { fontSize: 18, marginTop: 20 },
   itemContainer: { flexDirection: "row", alignItems: "center", marginBottom: 15 },
   itemImagem: { width: 50, height: 50, marginRight: 10, borderRadius: 5 },
-  item: { fontSize: 16 },
+  item: { fontSize: 16, flex: 1 },
 });

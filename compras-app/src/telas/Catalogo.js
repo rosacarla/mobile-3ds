@@ -9,7 +9,11 @@ const produtos = [
   { id: "5", nome: "Maçã", categoria: "Fruta", preco: 12, imagem: "https://img.cdndsgni.com/preview/10002711-m.jpg"},
   { id: "6", nome: "Banana", categoria: "Fruta", preco: 4, imagem: "https://img.cdndsgni.com/preview/10001685-m.jpg"},
   { id: "7", nome: "Brócolis", categoria: "Hortaliça", preco: 6, imagem: "https://img.cdndsgni.com/preview/12986970-m.jpg"},
-  { id: "8", nome: "Cebola", categoria: "Legume", preco: 4.55, imagem: "https://img.cdndsgni.com/preview/11174194-m.jpg"}
+  { id: "8", nome: "Cebola", categoria: "Legume", preco: 4.55, imagem: "https://img.cdndsgni.com/preview/11174194-m.jpg"},
+  { id: "9", nome: "Abacate", categoria: "Fruta", preco: 5.00, imagem: "https://img.cdndsgni.com/preview/12483041.jpg" },
+  { id: "10", nome: "Alho", categoria: "Hortaliça", preco: 6.50, imagem: "https://img.cdndsgni.com/preview/12485106.jpg" },
+  { id: "11", nome: "Batata doce", categoria: "Legume", preco: 4.00, imagem:"https://img.cdndsgni.com/preview/12744319.jpg"},
+  { id: "12", nome: "Laranja", categoria: "Fruta", preco: 4.99, imagem:"https://img.cdndsgni.com/preview/13453675.jpg"}
 ];
 
 export default function Catalogo({ irParaCarrinho, adicionarAoCarrinho }) {
