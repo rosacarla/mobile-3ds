@@ -1,0 +1,15 @@
+{
+  "name": "AppPrototipo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mercadopago": "^3.4.0",
+    "react-native": "0.87.0",
+    "react-native-sqlite-storage": "^6.0.1"
+  }
+}
